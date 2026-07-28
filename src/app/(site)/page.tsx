@@ -9,6 +9,7 @@ import { DisplayTitle } from "@/components/typography/DisplayTitle";
 import { Eyebrow } from "@/components/typography/Eyebrow";
 import { routes } from "@/config/routes";
 import { InstitutionalIndicators } from "./InstitutionalIndicators";
+import { TrustedCompanies } from "./TrustedCompanies";
 
 export default function Home() {
   return (
@@ -57,7 +58,7 @@ export default function Home() {
                 </Button>
               </div>
 
-              <Grid
+              {/*<Grid
                 columns={3}
                 gap="sm"
                 role="list"
@@ -85,7 +86,7 @@ export default function Home() {
                   />
                   Atendimento para empresas de todos os portes
                 </p>
-              </Grid>
+              </Grid>*/}
             </div>
 
             <div className="image-reveal min-w-0 self-center lg:col-span-5 lg:-translate-y-6 lg:scale-115">
@@ -103,6 +104,7 @@ export default function Home() {
         </Container>
       </Section>
       <InstitutionalIndicators />
+      <TrustedCompanies />
     </PageAtmosphere>
   );
 }

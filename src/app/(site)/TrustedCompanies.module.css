@@ -1,0 +1,209 @@
+.viewport {
+  width: 100%;
+  min-width: 0;
+  margin-top: var(--space-5);
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 2%,
+    black 8%,
+    black 94%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 2%,
+    black 8%,
+    black 94%,
+    transparent
+  );
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: trusted-companies-marquee 60s linear infinite;
+  will-change: transform;
+}
+
+.sequence {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0 var(--space-6) 0 0;
+  list-style: none;
+}
+
+.logoItem {
+  display: flex;
+  flex: 0 0 auto;
+  width: max-content;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  height: 11rem;
+  overflow: hidden;
+}
+
+.logoFrame {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  transform: scale(var(--logo-scale));
+  transform-origin: center;
+}
+
+.logoImage {
+  width: auto;
+  height: auto;
+  max-width: 13rem;
+  max-height: 9rem;
+  object-fit: contain;
+  opacity: 0.78;
+  transform-origin: center;
+  transition:
+    opacity var(--duration-normal) var(--ease-standard),
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+@keyframes trusted-companies-marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .viewport:hover .track {
+    animation-play-state: paused;
+  }
+
+  .logoItem:hover .logoImage {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@media (max-width: 47.999rem) {
+  .viewport {
+    margin-top: var(--space-5);
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 2%,
+      black 98%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 2%,
+      black 98%,
+      transparent
+    );
+  }
+
+  .sequence {
+    gap: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  .logoItem {
+    height: 7.5rem;
+  }
+
+  .logoImage {
+    max-width: 10rem;
+    max-height: 6rem;
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 63.999rem) {
+  .viewport {
+    margin-top: var(--space-6);
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 1.5%,
+      black 98.5%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 1.5%,
+      black 98.5%,
+      transparent
+    );
+  }
+
+  .sequence {
+    gap: var(--space-5);
+    padding-right: var(--space-5);
+  }
+
+  .logoItem {
+    height: 9rem;
+  }
+
+  .logoImage {
+    max-width: 12rem;
+    max-height: 7.25rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .viewport {
+    margin-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewport {
+    overflow: visible;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .track {
+    display: block;
+    width: auto;
+    animation: none;
+    will-change: auto;
+  }
+
+  .sequence {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6);
+    padding: 0;
+  }
+
+  .sequence[aria-hidden="true"] {
+    display: none;
+  }
+
+  .logoItem {
+    width: auto;
+  }
+
+  .logoImage {
+    opacity: 0.82;
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 40rem) {
+  .sequence {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 64rem) {
+  .sequence {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
