@@ -1,0 +1,64 @@
+.skip-link {
+  position: fixed;
+  top: var(--space-4);
+  left: var(--space-4);
+  z-index: var(--z-toast);
+  translate: 0 -200%;
+  border-radius: var(--radius-sm);
+  background: var(--if-white);
+  color: var(--if-green-950);
+  padding: var(--space-3) var(--space-4);
+  box-shadow: var(--shadow-md);
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  translate: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hairline {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.prose-measure {
+  max-width: 65ch;
+}
+
+.glass-panel {
+  border-color: var(--theme-border, var(--border-default));
+  background: var(--theme-surface-secondary, var(--surface-raised));
+}
+
+@supports (background: color-mix(in srgb, white, transparent)) {
+  .glass-panel {
+    background: color-mix(
+      in srgb,
+      var(--theme-surface-secondary, var(--surface-raised)) 88%,
+      transparent
+    );
+  }
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-panel {
+    background: color-mix(
+      in srgb,
+      var(--theme-surface-secondary, var(--surface-raised)) 76%,
+      transparent
+    );
+    -webkit-backdrop-filter: blur(1.5rem);
+    backdrop-filter: blur(1.5rem);
+  }
+}

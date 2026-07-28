@@ -1,0 +1,198 @@
+:root {
+  /* Institutional */
+  --if-green-950: #042f29;
+  --if-green-900: #073e36;
+  --if-green-850: #0b493f;
+  --if-green-800: #10594d;
+  --if-green-700: #17705f;
+  --if-green-600: #248b74;
+  --if-green-500: #35a98b;
+  --if-green-400: #62c5a8;
+  --if-green-300: #99d9c6;
+  --if-green-200: #ccebe1;
+  --if-green-100: #e8f5f0;
+  --if-green-50: #f4faf7;
+
+  /* Neutral */
+  --if-ink-950: #0b1815;
+  --if-ink-900: #13231f;
+  --if-ink-800: #22332f;
+  --if-ink-700: #3d4c48;
+  --if-ink-600: #5a6864;
+  --if-ink-500: #73807c;
+  --if-white: #ffffff;
+
+  /* Editorial */
+  --if-ivory: #f7f4ed;
+  --if-warm-100: #f0ebe2;
+  --if-warm-200: #e4dccf;
+
+  /* Industrial */
+  --if-graphite-950: #101615;
+  --if-graphite-900: #171e1c;
+  --if-graphite-800: #202927;
+  --if-steel-700: #40504d;
+
+  /* Semantic accents */
+  --if-orange-500: #e7834d;
+  --if-blue-500: #348fc4;
+  --if-yellow-500: #d9a93d;
+  --if-red-500: #d95b52;
+  --semantic-success: var(--if-green-700);
+  --semantic-warning: #805f0f;
+  --semantic-danger: #a83e37;
+  --semantic-info: #176b9d;
+  --semantic-warning-surface: color-mix(in srgb, var(--if-yellow-500) 16%, var(--if-white));
+  --semantic-danger-surface: color-mix(in srgb, var(--if-red-500) 13%, var(--if-white));
+  --semantic-info-surface: color-mix(in srgb, var(--if-blue-500) 13%, var(--if-white));
+
+  /* Text */
+  --text-primary: var(--if-ink-950);
+  --text-secondary: var(--if-ink-700);
+  --text-muted: var(--if-ink-600);
+  --text-inverse: var(--if-white);
+  --text-accent: var(--if-green-800);
+
+  /* Surfaces */
+  --surface-page: var(--if-white);
+  --surface-muted: var(--if-green-50);
+  --surface-ivory: var(--if-ivory);
+  --surface-dark: var(--if-green-950);
+  --surface-raised: var(--if-white);
+
+  /* Contextual theme defaults */
+  --theme-text-primary: var(--text-primary);
+  --theme-text-secondary: var(--text-secondary);
+  --theme-text-inverse: var(--text-inverse);
+  --theme-text-on-dark-secondary: var(--if-green-200);
+  --theme-accent: var(--if-green-700);
+  --theme-accent-text: var(--if-green-700);
+  --theme-surface-primary: var(--surface-raised);
+  --theme-surface-secondary: var(--surface-muted);
+  --theme-surface-editorial: var(--surface-ivory);
+  --theme-surface-dark: var(--surface-dark);
+  --theme-border: var(--border-default);
+  --theme-dark-border: var(--if-green-700);
+  --theme-control-bg: var(--if-green-800);
+  --theme-control-text: var(--if-white);
+  --theme-control-border: transparent;
+  --theme-control-hover: var(--if-green-900);
+  --theme-control-secondary-bg: var(--if-green-100);
+  --theme-control-secondary-text: var(--if-green-950);
+  --theme-control-secondary-hover: var(--if-green-200);
+  --theme-control-inverse-bg: var(--if-white);
+  --theme-control-inverse-text: var(--if-green-950);
+  --theme-control-inverse-hover: var(--if-green-100);
+  --theme-control-accent-bg: var(--if-orange-500);
+  --theme-control-accent-text: var(--if-ink-950);
+  --theme-status-neutral-bg: var(--if-warm-100);
+  --theme-status-neutral-text: var(--if-ink-800);
+  --theme-status-success-bg: var(--if-green-100);
+  --theme-status-success-text: var(--semantic-success);
+  --theme-status-warning-text: var(--semantic-warning);
+  --theme-status-warning-bg: var(--semantic-warning-surface);
+  --theme-status-danger-text: var(--semantic-danger);
+  --theme-status-danger-bg: var(--semantic-danger-surface);
+  --theme-status-info-text: var(--semantic-info);
+  --theme-status-info-bg: var(--semantic-info-surface);
+
+  /* Global navigation */
+  --header-background: var(--theme-surface-primary);
+  --header-background-scrolled: var(--theme-surface-primary);
+  --header-text: var(--theme-text-primary);
+  --header-text-secondary: var(--theme-text-secondary);
+  --header-border: var(--theme-border);
+  --header-hover: var(--theme-surface-secondary);
+  --header-active: var(--theme-accent-text);
+  --header-cta-bg: var(--theme-control-bg);
+  --header-cta-text: var(--theme-control-text);
+  --header-overlay: rgb(4 47 41 / 52%);
+
+  /* Borders */
+  --border-subtle: color-mix(in srgb, var(--if-green-950) 12%, transparent);
+  --border-default: color-mix(in srgb, var(--if-green-950) 22%, transparent);
+  --border-strong: color-mix(in srgb, var(--if-green-950) 42%, transparent);
+  --focus-ring: var(--if-blue-500);
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgb(4 47 41 / 6%);
+  --shadow-sm: 0 4px 14px rgb(4 47 41 / 8%);
+  --shadow-md: 0 16px 40px rgb(4 47 41 / 10%);
+  --shadow-lg: 0 28px 72px rgb(4 47 41 / 14%);
+  --shadow-focus:
+    0 0 0 2px var(--if-white),
+    0 0 0 5px var(--focus-ring);
+
+  /* Radius */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Width */
+  --width-page: 90rem;
+  --width-content: 80rem;
+  --width-reading: 47.5rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Type scale */
+  --font-size-xs: clamp(0.875rem, 0.85rem + 0.08vw, 0.9375rem);
+  --font-size-sm: clamp(0.875rem, 0.84rem + 0.16vw, 1rem);
+  --font-size-base: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1.04rem + 0.36vw, 1.375rem);
+  --font-size-xl: clamp(1.25rem, 1.12rem + 0.55vw, 1.625rem);
+  --font-size-2xl: clamp(1.5rem, 1.28rem + 0.9vw, 2.125rem);
+  --font-size-3xl: clamp(1.875rem, 1.5rem + 1.5vw, 2.875rem);
+  --font-size-4xl: clamp(2.25rem, 1.66rem + 2.4vw, 3.875rem);
+  --font-size-5xl: clamp(2.75rem, 1.9rem + 3.5vw, 5.125rem);
+  --font-size-display: clamp(3.25rem, 2rem + 5vw, 6.75rem);
+
+  /* Deprecated aliases: remove only in a future major release. */
+  --text-xs: var(--font-size-xs);
+  --text-sm: var(--font-size-sm);
+  --text-base: var(--font-size-base);
+  --text-lg: var(--font-size-lg);
+  --text-xl: var(--font-size-xl);
+  --text-2xl: var(--font-size-2xl);
+  --text-3xl: var(--font-size-3xl);
+  --text-4xl: var(--font-size-4xl);
+  --text-5xl: var(--font-size-5xl);
+  --text-display: var(--font-size-display);
+  --leading-tight: 1.04;
+  --leading-heading: 1.12;
+  --leading-body: 1.62;
+  --tracking-tight: -0.035em;
+  --tracking-label: 0.12em;
+
+  /* Motion */
+  --duration-fast: 180ms;
+  --duration-normal: 280ms;
+  --duration-reveal: 700ms;
+  --duration-slow: 800ms;
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layering */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 30;
+  --z-overlay: 50;
+  --z-modal: 70;
+  --z-toast: 90;
+}

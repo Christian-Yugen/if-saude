@@ -1,0 +1,33 @@
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-tight);
+}
+
+.font-editorial {
+  font-family: var(--font-editorial), Georgia, serif;
+  font-weight: 400;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.prose-reading {
+  max-width: 65ch;
+  color: var(--theme-text-secondary, var(--text-secondary));
+  font-size: var(--font-size-lg);
+  line-height: var(--leading-body);
+}
