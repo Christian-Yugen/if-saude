@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/actions/Button";
 import { Container } from "@/components/layout/Container";
 import { Grid } from "@/components/layout/Grid";
@@ -10,6 +9,7 @@ import { Eyebrow } from "@/components/typography/Eyebrow";
 import { routes } from "@/config/routes";
 import { InstitutionalIndicators } from "./InstitutionalIndicators";
 import { TrustedCompanies } from "./TrustedCompanies";
+import { AudienceSolutions } from "./AudienceSolutions";
 
 export default function Home() {
   return (
@@ -105,6 +105,7 @@ export default function Home() {
       </Section>
       <InstitutionalIndicators />
       <TrustedCompanies />
+      <AudienceSolutions />
     </PageAtmosphere>
   );
 }
