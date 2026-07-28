@@ -8,6 +8,7 @@ import { Section } from "@/components/layout/Section";
 import { DisplayTitle } from "@/components/typography/DisplayTitle";
 import { Eyebrow } from "@/components/typography/Eyebrow";
 import { routes } from "@/config/routes";
+import { InstitutionalIndicators } from "./InstitutionalIndicators";
 
 export default function Home() {
   return (
@@ -101,6 +102,7 @@ export default function Home() {
           </Grid>
         </Container>
       </Section>
+      <InstitutionalIndicators />
     </PageAtmosphere>
   );
 }
