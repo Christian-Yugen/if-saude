@@ -1,0 +1,352 @@
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+}
+
+.row {
+  display: flex;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+.card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-width: 0;
+  height: 22.25rem;
+  flex: 1 1 0;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  background: var(--if-warm-100);
+  box-shadow: var(--shadow-xs);
+  transition:
+    flex-grow 550ms var(--ease-emphasized),
+    border-color var(--duration-normal) var(--ease-standard),
+    box-shadow var(--duration-normal) var(--ease-standard);
+}
+
+.card[data-active="true"] {
+  flex-grow: 2.76;
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover,
+.card:focus-within {
+  box-shadow: var(--shadow-sm);
+}
+
+.card[data-active="true"]:hover,
+.card[data-active="true"]:focus-within {
+  box-shadow: var(--shadow-md);
+}
+
+.image {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  animation: ecosystem-image-in 350ms var(--ease-standard) both;
+}
+
+.overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 350ms var(--ease-standard);
+}
+
+.card[data-active="true"] .overlay {
+  opacity: 1;
+}
+
+.card[data-variant="medicine"] .overlay {
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--if-green-950) 97%, transparent) 0%,
+    color-mix(in srgb, var(--if-green-950) 88%, transparent) 45%,
+    transparent 82%
+  );
+}
+
+.card[data-variant="exams"] .overlay {
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--if-green-850) 97%, transparent) 0%,
+    color-mix(in srgb, var(--if-green-700) 84%, transparent) 45%,
+    transparent 82%
+  );
+}
+
+.card[data-variant="safety"] .overlay {
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--if-graphite-950) 97%, transparent) 0%,
+    color-mix(in srgb, var(--if-green-950) 86%, transparent) 45%,
+    transparent 82%
+  );
+}
+
+.card[data-variant="esocial"] .overlay {
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--if-green-800) 97%, transparent) 0%,
+    color-mix(in srgb, var(--if-green-600) 84%, transparent) 45%,
+    transparent 82%
+  );
+}
+
+.card[data-variant="consulting"] .overlay {
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--if-ink-900) 97%, transparent) 0%,
+    color-mix(in srgb, var(--if-green-850) 84%, transparent) 45%,
+    transparent 82%
+  );
+}
+
+.card[data-variant="ambulatory"] .overlay {
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--if-green-700) 97%, transparent) 0%,
+    color-mix(in srgb, var(--if-green-500) 82%, transparent) 45%,
+    transparent 82%
+  );
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-5);
+}
+
+.trigger {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  gap: var(--space-3);
+  border: 0;
+  background: transparent;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+}
+
+.trigger:focus-visible {
+  border-radius: var(--radius-sm);
+}
+
+.icon {
+  display: inline-flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: var(--if-green-100);
+  color: var(--if-green-800);
+}
+
+.icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.title {
+  min-width: 0;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-tight);
+  overflow-wrap: anywhere;
+}
+
+.benefit {
+  margin-top: var(--space-4);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--leading-body);
+}
+
+.details {
+  margin-top: var(--space-4);
+  animation: ecosystem-content-in 250ms var(--ease-standard) 90ms both;
+}
+
+.chips {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  width: fit-content;
+  min-height: 1.75rem;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid color-mix(in srgb, var(--if-white) 35%, transparent);
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--if-white) 18%, transparent);
+  color: var(--if-white);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}
+
+.chips .moreChip {
+  border-color: color-mix(in srgb, var(--if-white) 24%, transparent);
+  background: color-mix(in srgb, var(--if-white) 11%, transparent);
+  opacity: 0.78;
+}
+
+.card[data-active="true"] .title {
+  font-size: var(--font-size-xl);
+}
+
+.action {
+  margin-top: auto;
+  padding-top: var(--space-4);
+}
+
+.card[data-active="true"] .trigger,
+.card[data-active="true"] .benefit {
+  max-width: 25rem;
+  color: var(--if-white);
+  animation: ecosystem-content-in 250ms var(--ease-standard) 70ms both;
+}
+
+.card[data-active="true"] .icon {
+  background: color-mix(in srgb, var(--if-white) 18%, transparent);
+  color: var(--if-white);
+}
+
+.card[data-active="true"] .action {
+  margin-top: var(--space-3);
+  padding-top: 0;
+  animation: ecosystem-content-in 180ms var(--ease-standard) 150ms both;
+}
+
+@media (min-width: 64rem) {
+  .card[data-active="true"] .action {
+    position: absolute;
+    z-index: 2;
+    right: var(--space-5);
+    bottom: var(--space-5);
+    margin: 0;
+    padding: 0;
+  }
+
+  .card[data-variant="exams"]:not([data-active="true"]) .content {
+    padding-inline: var(--space-3);
+  }
+
+  .card[data-variant="exams"]:not([data-active="true"]) .trigger {
+    gap: var(--space-1);
+  }
+
+  .card[data-variant="exams"]:not([data-active="true"]) .title {
+    font-size: var(--font-size-base);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+
+@keyframes ecosystem-image-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ecosystem-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 63.999rem) {
+  .rows {
+    gap: var(--space-4);
+  }
+
+  .row {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .card {
+    width: 100%;
+    height: 19rem;
+    flex: none;
+    transition:
+      height 550ms var(--ease-emphasized),
+      border-color var(--duration-normal) var(--ease-standard),
+      box-shadow var(--duration-normal) var(--ease-standard);
+  }
+
+  .card[data-active="true"] {
+    height: 30rem;
+  }
+
+  .content {
+    padding: var(--space-5);
+  }
+
+  .card[data-active="true"] .trigger,
+  .card[data-active="true"] .benefit {
+    max-width: min(70%, 25rem);
+  }
+}
+
+@media (max-width: 29.999rem) {
+  .card[data-active="true"] {
+    height: 32rem;
+  }
+
+  .card[data-active="true"] .trigger,
+  .card[data-active="true"] .benefit {
+    max-width: 75%;
+  }
+
+  .title {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .overlay {
+    transition-duration: 0.01ms;
+  }
+
+  .image,
+  .card[data-active="true"] .trigger,
+  .card[data-active="true"] .benefit,
+  .details,
+  .card[data-active="true"] .action {
+    animation: none;
+  }
+}

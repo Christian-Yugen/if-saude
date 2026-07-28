@@ -10,6 +10,7 @@ import { routes } from "@/config/routes";
 import { InstitutionalIndicators } from "./InstitutionalIndicators";
 import { TrustedCompanies } from "./TrustedCompanies";
 import { AudienceSolutions } from "./AudienceSolutions";
+import { EcosystemSolutions } from "./EcosystemSolutions";
 
 export default function Home() {
   return (
@@ -106,6 +107,7 @@ export default function Home() {
       <InstitutionalIndicators />
       <TrustedCompanies />
       <AudienceSolutions />
+      <EcosystemSolutions />
     </PageAtmosphere>
   );
 }

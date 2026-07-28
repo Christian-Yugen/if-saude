@@ -55,7 +55,11 @@ export function SiteFooter() {
           </div>
 
           <div className="flex flex-col gap-3 border-t border-[var(--if-green-700)] py-6 text-sm text-[var(--if-green-200)] sm:flex-row sm:items-center sm:justify-between">
-            <p>© {currentYear} {siteConfig.name}. Todos os direitos reservados. Powered  by UXBRAS</p>
+            <p>
+              <span className="italic">Powered by</span>{" "}
+              <span className="font-bold">UXBRAS</span>® | © {currentYear}{" "}
+              {siteConfig.name}. Todos os direitos reservados.
+            </p>
             <p>{siteConfig.legalName}</p>
           </div>
         </Container>
