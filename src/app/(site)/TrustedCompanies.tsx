@@ -85,7 +85,9 @@ type CompanySequenceProps = {
 };
 
 type LogoFrameStyle = CSSProperties & {
-  "--logo-scale": number;
+  "--logo-width": string;
+  "--logo-width-tablet": string;
+  "--logo-width-mobile": string;
 };
 
 function CompanySequence({ duplicate = false }: CompanySequenceProps) {
@@ -95,14 +97,20 @@ function CompanySequence({ duplicate = false }: CompanySequenceProps) {
         <li className={styles.logoItem} key={company.name}>
           <div
             className={styles.logoFrame}
-            style={{ "--logo-scale": company.visualScale } as LogoFrameStyle}
+            style={
+              {
+                "--logo-width": `${13 * company.visualScale}rem`,
+                "--logo-width-tablet": `${12 * company.visualScale}rem`,
+                "--logo-width-mobile": `${10 * company.visualScale}rem`,
+              } as LogoFrameStyle
+            }
           >
             <Image
               src={company.src}
               alt={duplicate ? "" : `Logotipo da ${company.name}`}
               width={company.width}
               height={company.height}
-              sizes="(max-width: 767px) 128px, (max-width: 1023px) 160px, 176px"
+              sizes="(max-width: 767px) 216px, (max-width: 1023px) 260px, 282px"
               className={styles.logoImage}
             />
           </div>
@@ -118,7 +126,7 @@ export function TrustedCompanies() {
       density="standard"
       surface="ivory"
       aria-labelledby="trusted-companies-title"
-      className="border-y border-[var(--theme-border)] py-6 shadow-[var(--shadow-xs)] md:py-8 lg:py-9"
+      className="border-y border-[var(--theme-border)] py-3 shadow-[var(--shadow-xs)] md:py-4 lg:py-5"
     >
       <Container size="page">
         <Grid

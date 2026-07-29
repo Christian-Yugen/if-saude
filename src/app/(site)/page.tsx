@@ -12,6 +12,7 @@ import { InstitutionalIndicators } from "./InstitutionalIndicators";
 import { TrustedCompanies } from "./TrustedCompanies";
 import { AudienceSolutions } from "./AudienceSolutions";
 import { EcosystemSolutions } from "./EcosystemSolutions";
+import { IntegratedJourney } from "./IntegratedJourney";
 
 export default function Home() {
   return (
@@ -111,6 +112,7 @@ export default function Home() {
       <TrustedCompanies />
       <AudienceSolutions />
       <EcosystemSolutions />
+      <IntegratedJourney />
     </PageAtmosphere>
   );
 }

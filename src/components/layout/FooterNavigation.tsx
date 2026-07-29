@@ -8,40 +8,32 @@ const groupLabels: Record<NavigationGroup, string> = {
   "content-contact": "Conteúdos e contato",
 };
 
-const groupOrder: readonly NavigationGroup[] = [
-  "solutions",
-  "institutional",
-  "content-contact",
-];
+type FooterNavigationProps = {
+  group: NavigationGroup;
+};
 
-export function FooterNavigation() {
-  const links = mainNavigation.filter((item) => item.type === "link");
+export function FooterNavigation({ group }: FooterNavigationProps) {
+  const links = mainNavigation.filter(
+    (item) => item.type === "link" && item.footerGroup === group,
+  );
 
   return (
-    <nav aria-label="Navegação do rodapé" className="grid gap-10 sm:grid-cols-3">
-      {groupOrder.map((group) => {
-        const groupLinks = links.filter((item) => item.footerGroup === group);
-
-        return (
-          <div key={group}>
-            <h2 className="text-sm font-extrabold uppercase tracking-[var(--tracking-label)] text-[var(--if-green-300)]">
-              {groupLabels[group]}
-            </h2>
-            <ul className="mt-5 space-y-2">
-              {groupLinks.map((item) => (
-                <li key={item.id}>
-                  <Link
-                    href={item.href}
-                    className="inline-flex min-h-11 items-center text-sm font-semibold text-[var(--if-green-100)] transition-colors hover:text-[var(--if-white)]"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        );
-      })}
+    <nav aria-label={`${groupLabels[group]} no rodapé`}>
+      <h2 className="text-xs font-extrabold uppercase tracking-[var(--tracking-label)] text-[var(--if-green-300)]">
+        {groupLabels[group]}
+      </h2>
+      <ul className="mt-3">
+        {links.map((item) => (
+          <li key={item.id}>
+            <Link
+              href={item.href}
+              className="inline-flex min-h-11 items-center text-sm font-semibold leading-tight text-[var(--if-green-100)] transition-colors hover:text-[var(--if-white)] lg:min-h-8"
+            >
+              {item.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }
