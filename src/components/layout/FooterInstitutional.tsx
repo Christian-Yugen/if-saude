@@ -7,12 +7,12 @@ export function FooterInstitutional() {
   );
 
   return (
-    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-1">
+    <div className="grid content-start gap-5">
       <div>
-        <h2 className="text-sm font-extrabold uppercase tracking-[var(--tracking-label)] text-[var(--if-green-300)]">
+        <h2 className="text-xs font-extrabold uppercase tracking-[var(--tracking-label)] text-[var(--if-green-300)]">
           Endereço
         </h2>
-        <address className="mt-5 max-w-[28ch] text-sm not-italic leading-relaxed text-[var(--if-green-100)]">
+        <address className="mt-2 max-w-[28ch] text-sm not-italic leading-[1.4] text-[var(--if-green-100)]">
           {address.street}
           <br />
           {address.district}
@@ -24,10 +24,10 @@ export function FooterInstitutional() {
       </div>
 
       <div>
-        <h2 className="text-sm font-extrabold uppercase tracking-[var(--tracking-label)] text-[var(--if-green-300)]">
+        <h2 className="text-xs font-extrabold uppercase tracking-[var(--tracking-label)] text-[var(--if-green-300)]">
           Responsável técnico
         </h2>
-        <p className="mt-5 text-sm font-semibold text-[var(--if-white)]">
+        <p className="mt-2 text-sm font-semibold text-[var(--if-white)]">
           {technicalDirector.name}
         </p>
         <p className="mt-1 text-sm text-[var(--if-green-200)]">
@@ -37,16 +37,17 @@ export function FooterInstitutional() {
 
       {hasContact && (
         <div>
-          <h2 className="text-sm font-extrabold uppercase tracking-[var(--tracking-label)] text-[var(--if-green-300)]">
+          <h2 className="text-xs font-extrabold uppercase tracking-[var(--tracking-label)] text-[var(--if-green-300)]">
             Contato
           </h2>
-          <div className="mt-5 space-y-2 text-sm text-[var(--if-green-100)]">
+          <div className="mt-2 space-y-1 text-sm text-[var(--if-green-100)]">
             {contact.phone && <p>{contact.phone}</p>}
             {contact.whatsapp && <p>{contact.whatsapp}</p>}
             {contact.email && <p>{contact.email}</p>}
           </div>
         </div>
       )}
+
     </div>
   );
 }

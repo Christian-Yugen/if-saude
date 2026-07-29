@@ -30,7 +30,7 @@
   display: flex;
   flex: none;
   align-items: center;
-  gap: var(--space-6);
+  gap: var(--space-5);
   margin: 0;
   padding: 0 var(--space-6) 0 0;
   list-style: none;
@@ -44,24 +44,21 @@
   align-items: center;
   justify-content: center;
   height: 11rem;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .logoFrame {
   display: flex;
-  width: max-content;
-  height: 100%;
+  width: var(--logo-width);
+  height: 9rem;
+  flex: 0 0 var(--logo-width);
   align-items: center;
   justify-content: center;
-  transform: scale(var(--logo-scale));
-  transform-origin: center;
 }
 
 .logoImage {
-  width: auto;
-  height: auto;
-  max-width: 13rem;
-  max-height: 9rem;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   opacity: 0.78;
   transform-origin: center;
@@ -107,17 +104,18 @@
   }
 
   .sequence {
-    gap: var(--space-4);
-    padding-right: var(--space-4);
+    gap: var(--space-3);
+    padding-right: var(--space-3);
   }
 
   .logoItem {
     height: 7.5rem;
   }
 
-  .logoImage {
-    max-width: 10rem;
-    max-height: 6rem;
+  .logoFrame {
+    width: var(--logo-width-mobile);
+    height: 6rem;
+    flex-basis: var(--logo-width-mobile);
   }
 }
 
@@ -141,17 +139,18 @@
   }
 
   .sequence {
-    gap: var(--space-5);
-    padding-right: var(--space-5);
+    gap: var(--space-4);
+    padding-right: var(--space-4);
   }
 
   .logoItem {
     height: 9rem;
   }
 
-  .logoImage {
-    max-width: 12rem;
-    max-height: 7.25rem;
+  .logoFrame {
+    width: var(--logo-width-tablet);
+    height: 7.25rem;
+    flex-basis: var(--logo-width-tablet);
   }
 }
 
