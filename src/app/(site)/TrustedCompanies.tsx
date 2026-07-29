@@ -116,8 +116,9 @@ export function TrustedCompanies() {
   return (
     <Section
       density="standard"
+      surface="ivory"
       aria-labelledby="trusted-companies-title"
-      className="border-y border-[var(--theme-border)] bg-[var(--if-white)] py-6 shadow-[var(--shadow-xs)] md:py-8 lg:py-9"
+      className="border-y border-[var(--theme-border)] py-6 shadow-[var(--shadow-xs)] md:py-8 lg:py-9"
     >
       <Container size="page">
         <Grid

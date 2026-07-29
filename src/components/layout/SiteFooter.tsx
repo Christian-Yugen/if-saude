@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { AtmosphericSurface } from "@/components/layout/AtmosphericSurface";
 import { Container } from "@/components/layout/Container";
 import { FooterInstitutional } from "@/components/layout/FooterInstitutional";
 import { FooterNavigation } from "@/components/layout/FooterNavigation";
@@ -16,7 +17,8 @@ export function SiteFooter() {
       decorative={false}
       className="overflow-hidden"
     >
-      <footer>
+      <AtmosphericSurface variant="deep">
+        <footer>
         <Container>
           <div className="grid gap-12 py-20 md:py-24 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-7">
@@ -63,7 +65,8 @@ export function SiteFooter() {
             <p>{siteConfig.legalName}</p>
           </div>
         </Container>
-      </footer>
+        </footer>
+      </AtmosphericSurface>
     </PageAtmosphere>
   );
 }

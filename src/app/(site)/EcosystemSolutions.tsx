@@ -193,8 +193,9 @@ export function EcosystemSolutions() {
   return (
     <Section
       density="standard"
+      surface="mist"
       aria-labelledby="ecosystem-solutions-title"
-      className="-mt-4 bg-[var(--theme-surface-primary)] pt-0 md:-mt-5 md:pt-0"
+      className="pt-10 pb-14 md:pt-12 md:pb-20"
     >
       <Container size="page">
         <Eyebrow line className="mx-auto w-fit">

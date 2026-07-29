@@ -60,6 +60,57 @@
   --surface-dark: var(--if-green-950);
   --surface-raised: var(--if-white);
 
+  /* Atmospheric surfaces
+     Section-level light, depth and temperature. These tokens complement —
+     and do not replace — contextual page themes. */
+  --atmosphere-pure-fallback: #fdfcf9;
+  --atmosphere-pure-background:
+    radial-gradient(circle at 84% 4%, rgb(98 197 168 / 10%), transparent 34%),
+    linear-gradient(180deg, #fdfcf9 0%, #f8f6f0 100%);
+  --atmosphere-pure-edge: rgb(4 47 41 / 7%);
+
+  --atmosphere-ivory-fallback: #f4efe7;
+  --atmosphere-ivory-background:
+    radial-gradient(circle at 12% 16%, rgb(228 220 207 / 55%), transparent 34%),
+    linear-gradient(180deg, #f4efe7 0%, #fbf9f5 100%);
+  --atmosphere-ivory-edge: rgb(4 47 41 / 9%);
+
+  --atmosphere-mist-fallback: #e7f2ec;
+  --atmosphere-mist-background:
+    radial-gradient(circle at 74% 8%, rgb(53 169 139 / 18%), transparent 38%),
+    radial-gradient(circle at 8% 92%, rgb(153 217 198 / 18%), transparent 34%),
+    linear-gradient(180deg, #e3f0e9 0%, #f2f7f4 100%);
+  --atmosphere-mist-edge: rgb(16 89 77 / 16%);
+
+  --atmosphere-sage-fallback: #dcebe3;
+  --atmosphere-sage-background:
+    radial-gradient(circle at 18% 0%, rgb(98 197 168 / 22%), transparent 40%),
+    linear-gradient(180deg, #d7e9df 0%, #edf4f0 100%);
+  --atmosphere-sage-edge: rgb(16 89 77 / 20%);
+
+  --atmosphere-emerald-fallback: var(--if-green-700);
+  --atmosphere-emerald-background:
+    radial-gradient(circle at 76% 12%, rgb(153 217 198 / 24%), transparent 38%),
+    linear-gradient(145deg, var(--if-green-600) 0%, var(--if-green-700) 52%, var(--if-green-800) 100%);
+  --atmosphere-emerald-edge: rgb(255 255 255 / 16%);
+
+  --atmosphere-forest-fallback: var(--if-green-900);
+  --atmosphere-forest-background:
+    radial-gradient(circle at 22% 0%, rgb(53 169 139 / 20%), transparent 42%),
+    linear-gradient(145deg, var(--if-green-800) 0%, var(--if-green-900) 58%, var(--if-green-950) 100%);
+  --atmosphere-forest-edge: rgb(153 217 198 / 18%);
+
+  --atmosphere-deep-fallback: var(--if-green-950);
+  --atmosphere-deep-background:
+    radial-gradient(circle at 72% -8%, rgb(36 139 116 / 18%), transparent 40%),
+    linear-gradient(180deg, var(--if-green-900) 0%, var(--if-green-950) 68%, #021f1b 100%);
+  --atmosphere-deep-edge: rgb(153 217 198 / 14%);
+
+  --atmosphere-light-text: var(--if-ink-950);
+  --atmosphere-light-text-secondary: var(--if-ink-700);
+  --atmosphere-dark-text: var(--if-white);
+  --atmosphere-dark-text-secondary: var(--if-green-200);
+
   /* Contextual theme defaults */
   --theme-text-primary: var(--text-primary);
   --theme-text-secondary: var(--text-secondary);

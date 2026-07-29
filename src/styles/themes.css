@@ -136,3 +136,126 @@
     radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--theme-accent) 12%, transparent), transparent 28%),
     linear-gradient(135deg, transparent 65%, color-mix(in srgb, var(--theme-accent) 5%, transparent));
 }
+
+/* Atmospheric Surface System
+   Clear chapter boundaries with layered, brand-derived light. */
+.atmospheric-surface {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--atmosphere-fallback, var(--surface-page));
+  background-image: var(--atmosphere-background, none);
+  color: var(--atmosphere-text, var(--theme-text-primary));
+  box-shadow:
+    inset 0 1px 0 var(--atmosphere-edge, transparent),
+    inset 0 -1px 0 var(--atmosphere-edge, transparent);
+}
+
+[data-surface="pure"] {
+  --atmosphere-fallback: var(--atmosphere-pure-fallback);
+  --atmosphere-background: var(--atmosphere-pure-background);
+  --atmosphere-edge: var(--atmosphere-pure-edge);
+  --atmosphere-text: var(--atmosphere-light-text);
+  --theme-text-primary: var(--if-ink-950);
+  --theme-text-secondary: var(--if-ink-700);
+  --theme-accent: var(--if-green-700);
+  --theme-accent-text: var(--if-green-700);
+  --theme-surface-primary: var(--if-white);
+  --theme-surface-secondary: var(--if-green-50);
+  --theme-surface-editorial: var(--if-ivory);
+  --theme-border: var(--border-subtle);
+}
+
+[data-surface="ivory"] {
+  --atmosphere-fallback: var(--atmosphere-ivory-fallback);
+  --atmosphere-background: var(--atmosphere-ivory-background);
+  --atmosphere-edge: var(--atmosphere-ivory-edge);
+  --atmosphere-text: var(--atmosphere-light-text);
+  --theme-text-primary: var(--if-ink-950);
+  --theme-text-secondary: var(--if-ink-700);
+  --theme-accent: var(--if-green-700);
+  --theme-accent-text: var(--if-green-700);
+  --theme-surface-primary: var(--if-white);
+  --theme-surface-secondary: var(--if-warm-100);
+  --theme-surface-editorial: var(--if-ivory);
+  --theme-border: var(--if-warm-200);
+}
+
+[data-surface="mist"] {
+  --atmosphere-fallback: var(--atmosphere-mist-fallback);
+  --atmosphere-background: var(--atmosphere-mist-background);
+  --atmosphere-edge: var(--atmosphere-mist-edge);
+  --atmosphere-text: var(--atmosphere-light-text);
+  --theme-text-primary: var(--if-ink-950);
+  --theme-text-secondary: var(--if-ink-700);
+  --theme-accent: var(--if-green-700);
+  --theme-accent-text: var(--if-green-800);
+  --theme-surface-primary: var(--if-white);
+  --theme-surface-secondary: var(--if-green-50);
+  --theme-surface-editorial: var(--if-green-50);
+  --theme-border: var(--if-green-200);
+}
+
+[data-surface="sage"] {
+  --atmosphere-fallback: var(--atmosphere-sage-fallback);
+  --atmosphere-background: var(--atmosphere-sage-background);
+  --atmosphere-edge: var(--atmosphere-sage-edge);
+  --atmosphere-text: var(--atmosphere-light-text);
+  --theme-text-primary: var(--if-ink-950);
+  --theme-text-secondary: var(--if-ink-700);
+  --theme-accent: var(--if-green-700);
+  --theme-accent-text: var(--if-green-800);
+  --theme-surface-primary: var(--if-white);
+  --theme-surface-secondary: var(--if-green-100);
+  --theme-surface-editorial: var(--if-green-50);
+  --theme-border: var(--if-green-200);
+}
+
+[data-surface="emerald"],
+[data-surface="forest"],
+[data-surface="deep"] {
+  --atmosphere-text: var(--atmosphere-dark-text);
+  --theme-text-primary: var(--if-white);
+  --theme-text-secondary: var(--atmosphere-dark-text-secondary);
+  --theme-text-inverse: var(--if-white);
+  --theme-text-on-dark-secondary: var(--if-green-200);
+  --theme-accent: var(--if-green-300);
+  --theme-accent-text: var(--if-green-300);
+  --theme-surface-primary: color-mix(in srgb, var(--if-white) 8%, transparent);
+  --theme-surface-secondary: color-mix(in srgb, var(--if-white) 12%, transparent);
+  --theme-surface-editorial: color-mix(in srgb, var(--if-white) 10%, transparent);
+  --theme-surface-dark: var(--if-green-950);
+  --theme-border: color-mix(in srgb, var(--if-green-200) 28%, transparent);
+  --theme-control-bg: var(--if-white);
+  --theme-control-text: var(--if-green-950);
+  --theme-control-hover: var(--if-green-100);
+  --text-primary: var(--if-white);
+  --text-secondary: var(--if-green-200);
+  --text-muted: var(--if-green-300);
+  --text-accent: var(--if-green-300);
+}
+
+[data-surface="emerald"] {
+  --atmosphere-fallback: var(--atmosphere-emerald-fallback);
+  --atmosphere-background: var(--atmosphere-emerald-background);
+  --atmosphere-edge: var(--atmosphere-emerald-edge);
+}
+
+[data-surface="forest"] {
+  --atmosphere-fallback: var(--atmosphere-forest-fallback);
+  --atmosphere-background: var(--atmosphere-forest-background);
+  --atmosphere-edge: var(--atmosphere-forest-edge);
+}
+
+[data-surface="deep"] {
+  --atmosphere-fallback: var(--atmosphere-deep-fallback);
+  --atmosphere-background: var(--atmosphere-deep-background);
+  --atmosphere-edge: var(--atmosphere-deep-edge);
+}
+
+@media (forced-colors: active) {
+  .atmospheric-surface {
+    background: Canvas;
+    color: CanvasText;
+    box-shadow: inset 0 0 0 1px CanvasText;
+  }
+}
