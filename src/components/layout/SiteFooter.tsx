@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { AtmosphericSurface } from "@/components/layout/AtmosphericSurface";
 import { Container } from "@/components/layout/Container";
 import { FooterInstitutional } from "@/components/layout/FooterInstitutional";
 import { FooterNavigation } from "@/components/layout/FooterNavigation";
@@ -16,7 +17,8 @@ export function SiteFooter() {
       decorative={false}
       className="overflow-hidden"
     >
-      <footer>
+      <AtmosphericSurface variant="deep">
+        <footer>
         <Container>
           <div className="grid gap-12 py-20 md:py-24 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-7">
@@ -55,11 +57,16 @@ export function SiteFooter() {
           </div>
 
           <div className="flex flex-col gap-3 border-t border-[var(--if-green-700)] py-6 text-sm text-[var(--if-green-200)] sm:flex-row sm:items-center sm:justify-between">
-            <p>© {currentYear} {siteConfig.name}. Todos os direitos reservados. Powered  by UXBRAS</p>
+            <p>
+              <span className="italic">Powered by</span>{" "}
+              <span className="font-bold">UXBRAS</span>® | © {currentYear}{" "}
+              {siteConfig.name}. Todos os direitos reservados.
+            </p>
             <p>{siteConfig.legalName}</p>
           </div>
         </Container>
-      </footer>
+        </footer>
+      </AtmosphericSurface>
     </PageAtmosphere>
   );
 }

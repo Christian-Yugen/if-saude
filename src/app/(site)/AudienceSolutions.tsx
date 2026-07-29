@@ -12,8 +12,9 @@ export function AudienceSolutions() {
   return (
     <Section
       density="standard"
+      surface="sage"
       aria-labelledby="audience-solutions-title"
-      className="bg-[var(--theme-surface-primary)] pt-9 pb-14 md:pt-12 md:pb-20"
+      className="pt-9 pb-14 md:pt-12 md:pb-20"
     >
       <Container size="page">
         <SectionTitle

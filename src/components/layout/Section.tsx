@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef, ElementType } from "react";
+import type { AtmosphericSurfaceVariant } from "@/types/theme";
 import { cn } from "@/lib/utils";
 
 const densities = {
@@ -11,14 +12,26 @@ const densities = {
 type SectionProps<T extends ElementType = "section"> = {
   as?: T;
   density?: keyof typeof densities;
+  surface?: AtmosphericSurfaceVariant;
 } & Omit<ComponentPropsWithoutRef<T>, "as">;
 
 export function Section<T extends ElementType = "section">({
   as,
   density = "standard",
+  surface,
   className,
   ...props
 }: SectionProps<T>) {
   const Component = as ?? "section";
-  return <Component className={cn(densities[density], className)} {...props} />;
+  return (
+    <Component
+      data-surface={surface}
+      className={cn(
+        densities[density],
+        surface && "atmospheric-surface",
+        className,
+      )}
+      {...props}
+    />
+  );
 }

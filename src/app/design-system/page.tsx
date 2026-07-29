@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/actions/Button";
 import { TextLink } from "@/components/actions/TextLink";
 import { StatusBadge } from "@/components/data-display/StatusBadge";
+import { AtmosphericSurface } from "@/components/layout/AtmosphericSurface";
 import { Container } from "@/components/layout/Container";
 import { Grid } from "@/components/layout/Grid";
 import { PageAtmosphere } from "@/components/layout/PageAtmosphere";
@@ -25,7 +26,10 @@ import { EditorialQuote } from "@/components/typography/EditorialQuote";
 import { Eyebrow } from "@/components/typography/Eyebrow";
 import { SectionTitle } from "@/components/typography/SectionTitle";
 import { mainNavigation } from "@/config/navigation";
-import type { PageAtmosphereVariant } from "@/types/theme";
+import type {
+  AtmosphericSurfaceVariant,
+  PageAtmosphereVariant,
+} from "@/types/theme";
 
 export const metadata: Metadata = {
   title: "Design System",
@@ -75,6 +79,26 @@ const atmospheres: Array<[PageAtmosphereVariant, string]> = [
   ["editorial", "Editorial"],
   ["concierge", "Concierge"],
 ];
+
+const atmosphericSurfaces: Array<[AtmosphericSurfaceVariant, string, string]> = [
+  ["pure", "Pure", "Aberturas luminosas, Hero e entrada da experiência."],
+  ["ivory", "Ivory", "Papel quente para conteúdo institucional e confiança."],
+  ["mist", "Mist", "Verde-neblina para ecossistemas, produtos e exploração."],
+  ["sage", "Sage", "Capítulos claros com presença cromática perceptível."],
+  ["emerald", "Emerald", "Destaques de marca, chamadas e áreas de valor."],
+  ["forest", "Forest", "Autoridade, métricas e capítulos de alto contraste."],
+  ["deep", "Deep", "Encerramentos, Footer e momentos institucionais."],
+];
+
+const atmosphericSequence = [
+  "Pure → Ivory",
+  "Ivory → Sage",
+  "Sage → Mist",
+  "Mist → Emerald",
+  "Emerald → Ivory",
+  "Forest → Pure",
+  "Mist → Deep",
+] as const;
 
 const sectionClass = "border-t border-[var(--border-subtle)]";
 
@@ -466,6 +490,68 @@ export default function DesignSystemPage() {
                 {index + 1}
               </div>
             ))}
+          </Grid>
+        </Container>
+      </Section>
+
+      <Section id="atmospheric-surfaces" density="spacious" surface="pure">
+        <Container>
+          <Eyebrow line>Direção de arte</Eyebrow>
+          <SectionTitle
+            title="Atmospheric Surface System"
+            description="Superfícies de seção criam capítulos visuais claros por meio de luz, profundidade e temperatura — sem alterar o tema contextual da página."
+            className="mt-4"
+          />
+
+          <Grid columns={2} gap="lg" className="mt-10 lg:grid-cols-2">
+            {atmosphericSurfaces.map(([variant, label, description]) => (
+              <AtmosphericSurface
+                key={variant}
+                variant={variant}
+                className="min-h-64 rounded-[var(--radius-xl)] border border-[var(--theme-border)] p-7 shadow-[var(--shadow-sm)] md:p-8"
+              >
+                <p className="text-sm font-extrabold uppercase tracking-[var(--tracking-label)] opacity-75">
+                  Surface {label}
+                </p>
+                <p className="mt-16 max-w-md text-[length:var(--font-size-xl)] font-bold leading-[var(--leading-heading)]">
+                  {description}
+                </p>
+                <code className="mt-5 block text-sm opacity-70">
+                  surface=&quot;{variant}&quot;
+                </code>
+              </AtmosphericSurface>
+            ))}
+          </Grid>
+
+          <Grid columns={12} gap="xl" className="mt-12">
+            <Surface variant="ivory" className="md:col-span-7">
+              <h3 className="text-[length:var(--font-size-xl)] font-bold">
+                Regras de aplicação
+              </h3>
+              <ul className="mt-5 space-y-3 text-[var(--text-secondary)]">
+                <li>• Atmosferas marcam capítulos completos, nunca pequenos componentes.</li>
+                <li>• Limites entre seções devem ser legíveis, com luz interna em vez de faixas decorativas.</li>
+                <li>• Pure, Ivory, Mist e Sage sustentam conteúdo escuro; Emerald, Forest e Deep usam conteúdo inverso.</li>
+                <li>• Gradientes são derivados exclusivamente da família verde e dos papéis quentes da IF Saúde.</li>
+                <li>• O tema contextual define o domínio; a superfície define o momento narrativo.</li>
+              </ul>
+            </Surface>
+
+            <Surface variant="outlined" className="md:col-span-5">
+              <h3 className="text-[length:var(--font-size-xl)] font-bold">
+                Sequências recomendadas
+              </h3>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {atmosphericSequence.map((sequence) => (
+                  <span
+                    key={sequence}
+                    className="rounded-[var(--radius-full)] border border-[var(--border-default)] bg-[var(--surface-raised)] px-3 py-2 text-sm font-bold"
+                  >
+                    {sequence}
+                  </span>
+                ))}
+              </div>
+            </Surface>
           </Grid>
         </Container>
       </Section>

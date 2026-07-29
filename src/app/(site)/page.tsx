@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/actions/Button";
+import { AtmosphericSurface } from "@/components/layout/AtmosphericSurface";
 import { Container } from "@/components/layout/Container";
 import { Grid } from "@/components/layout/Grid";
 import { PageAtmosphere } from "@/components/layout/PageAtmosphere";
@@ -10,11 +11,13 @@ import { routes } from "@/config/routes";
 import { InstitutionalIndicators } from "./InstitutionalIndicators";
 import { TrustedCompanies } from "./TrustedCompanies";
 import { AudienceSolutions } from "./AudienceSolutions";
+import { EcosystemSolutions } from "./EcosystemSolutions";
 
 export default function Home() {
   return (
     <PageAtmosphere variant="human">
-      <Section
+      <AtmosphericSurface variant="pure">
+        <Section
         density="cinematic"
         className="pt-10 pb-16 md:pt-14 md:pb-20 lg:pt-16 lg:pb-20"
       >
@@ -102,10 +105,12 @@ export default function Home() {
             </div>
           </Grid>
         </Container>
-      </Section>
-      <InstitutionalIndicators />
+        </Section>
+        <InstitutionalIndicators />
+      </AtmosphericSurface>
       <TrustedCompanies />
       <AudienceSolutions />
+      <EcosystemSolutions />
     </PageAtmosphere>
   );
 }
