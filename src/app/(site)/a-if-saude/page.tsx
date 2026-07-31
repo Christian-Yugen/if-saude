@@ -14,6 +14,7 @@ import {
 import heroImage from "../../../../public/images/pages/about/hero-if-saude.png";
 import leadershipImage from "../../../../public/images/about/dr-issam-fares-junior.png";
 import teamImage from "../../../../public/images/about/integrated-team.png";
+import whoWeAreImage from "../../../../public/images/about/who-we-are-banner.png";
 import receptionImage from "../../../../public/images/facilities/reception.png";
 import consultationImage from "../../../../public/images/facilities/medical-consultation.png";
 import audiometryImage from "../../../../public/images/facilities/audiometry.png";
@@ -369,6 +370,13 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="min-w-0 lg:col-span-7">
+              <div className={styles.whoWeAreBanner}>
+                <Image
+                  src={whoWeAreImage}
+                  alt="Profissionais da IF Saúde integrando Medicina do Trabalho e Segurança Ocupacional"
+                  sizes="(min-width: 1024px) 58vw, calc(100vw - 4rem)"
+                />
+              </div>
               <div className={styles.identityGrid}>
                 {identityPillars.map((pillar) => {
                   const Icon = pillar.icon;
